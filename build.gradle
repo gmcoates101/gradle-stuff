@@ -3,3 +3,9 @@ task helloWorld {
         println "Hello Groovy World"
     }
 }
+
+task goodByeWorld {
+    doLast {
+        println "Goodbye Groovy Gradle"
+    }
+}
