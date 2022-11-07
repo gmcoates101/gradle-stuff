@@ -1,11 +1,36 @@
-task helloWorld {
-    doLast {
-        println "Hello Groovy World"
-    }
+plugins {
+    id 'java'
+    id 'application'
 }
 
-task goodByeWorld {
-    doLast {
-        println "Goodbye Groovy Gradle"
-    }
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 }
+
+compileJava {
+    options.compilerArgs << '-Werror'
+}
+
+application {
+    mainClass = 'com.linkedinlearning.calculator.Main'
+}
+
+//task helloWorld {
+//    doFirst {
+//        println "Hello First"
+//    }
+//    doLast {
+//        println "Hello Groovy World -version $version"
+//    }
+//}
+//
+//task goodByeWorld {
+//    dependsOn helloWorld
+//    doFirst {
+//        println "Goodbye First"
+//    }
+//    doLast {
+//        println "Goodbye Groovy Gradle -version $version"
+//    }
+//}
